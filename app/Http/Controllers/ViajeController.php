@@ -41,8 +41,8 @@ class ViajeController extends Controller
      */
     public function store(ViajeRequest $request)
     {
-        Auth::user()->viajes()->save( new Viaje($request->all() ) );
-        return  response()->json(['status'=> 0]);
+        $viaje = Auth::user()->viajes()->save( new Viaje($request->all() ) );
+        return  response()->json( $viaje);
     }
 
     /**
@@ -76,7 +76,8 @@ class ViajeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $viaje = Viaje::find($id);
+        $viaje->update($request->all());
     }
 
     /**

@@ -14,8 +14,8 @@ class Conceptos extends Migration
     {
         Schema::create('conceptos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion');            
-            //
+            $table->string('descripcion');     
+            $table->timestamps();       
         });
     }
 

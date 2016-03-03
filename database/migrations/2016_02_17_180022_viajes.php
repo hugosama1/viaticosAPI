@@ -14,9 +14,12 @@ class Viajes extends Migration
     {
         Schema::create('viajes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->string('descripcion');
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

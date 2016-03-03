@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Viatico extends Model
 {
-    public $timestamps = false;
     protected $fillable = [
+    	'descripcion'
     	'cantidad',
     	'iva',
     	'concepto_id'

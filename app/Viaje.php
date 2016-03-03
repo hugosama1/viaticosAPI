@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Viaje extends Model
 {
-    public $timestamps = false;
-
     protected $fillable = [
-    	'descripcion'
+    	'descripcion',
+    	'fecha_inicio',
+    	'fecha_fin'
     ];
 
     
@@ -20,4 +20,5 @@ class Viaje extends Model
     public function viaticos() {
     	return $this->hasMany('App\Viatico');
     }
+
 }

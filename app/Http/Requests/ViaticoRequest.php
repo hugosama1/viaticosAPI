@@ -26,7 +26,8 @@ class ViaticoRequest extends Request
         return [
             'cantidad' => 'required|numeric',
             'iva' => 'required|numeric',
-            'concepto_id' => 'required|integer|exists:conceptos,id'            
+            'concepto_id' => 'required|integer|exists:conceptos,id',
+            'descripcion' => 'required|max:255'         
         ];
     }
 

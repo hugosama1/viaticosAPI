@@ -14,12 +14,14 @@ class Viaticos extends Migration
     {
         Schema::create('viaticos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('viaje_id');
-            $table->integer('concepto_id');
+            $table->integer('viaje_id')->unsigned();
+            $table->integer('concepto_id')->unsigned();
+            $table->string('descripcion');
             $table->double('cantidad');
             $table->double('iva');
-            $table->foreign('concepto_id')->references('id')->on('conceptos');
-            $table->foreign('viaje_id')->references('id')->on('viajes');
+            $table->foreign('concepto_id')->references('id')->on('conceptos')->onDelete('cascade');
+            $table->foreign('viaje_id')->references('id')->on('viajes')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
