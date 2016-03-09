@@ -26,7 +26,8 @@ class ViajeRequest extends Request
         return [
             'descripcion' => 'required|max:255',
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date'
+            'fecha_fin' => 'required|date',
+            'mobile_id' => 'integer'
         ];
     }
 

@@ -15,6 +15,7 @@ class Viajes extends Migration
         Schema::create('viajes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->integer('mobile_id')->default(0);
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->string('descripcion');
@@ -30,6 +31,6 @@ class Viajes extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('viajes');
     }
 }

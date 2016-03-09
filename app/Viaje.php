@@ -9,7 +9,8 @@ class Viaje extends Model
     protected $fillable = [
     	'descripcion',
     	'fecha_inicio',
-    	'fecha_fin'
+    	'fecha_fin',
+        'mobile_id'
     ];
 
     

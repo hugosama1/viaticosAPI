@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Concepto;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,22 @@ class DatabaseSeeder extends Seeder
         foreach ($users as $user)
         {
             User::create($user);
+        }
+
+        DB::table('conceptos')->delete();
+
+        $conceptos = array(
+            ['descripcion' => 'AVION','id' => 1] ,
+            ['descripcion' => 'TRANSPORTE','id' => 2] ,
+            ['descripcion' => 'HOSPEDAJE','id' => 3] ,
+            ['descripcion' => 'ALIMENTOS','id' => 4] ,
+            ['descripcion' => 'OTROS','id' => 5] ,
+            );
+
+        // Loop through each user above and create the record for them in the database
+        foreach ($conceptos as $concepto)
+        {
+            Concepto::create($concepto);
         }
 
         Model::reguard();

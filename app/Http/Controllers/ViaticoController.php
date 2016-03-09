@@ -39,8 +39,8 @@ class ViaticoController extends Controller
      */
     public function store(Viaje $viaje, ViaticoRequest $request)
     {        
-        $viaje->viaticos()->save( new Viatico($request->all()));
-        return response()->json(['status'=>0]);
+        $viatico = $viaje->viaticos()->save( new Viatico($request->all()));
+        return response()->json($viatico);
     }
 
     /**
